@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+      crossorigin="anonymous"
+    />
+    <title>w3schools</title>
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: 0px;
+      }
+      .top-container {
+        position: relative;
+        background-color: white;
+        height: 40px;
+        padding-top: 20px;
+        line-height: 50px;
+        overflow: hidden;
+        z-index: 1;
+        padding: 0.7em 16px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .logo {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        text-decoration: none;
+        color: #555555;
+        display: block;
+        line-height: 1px;
+        font-size: 34px;
+        padding-top: 20px;
+        letter-spacing: 3px;
+        -webkit-font-smoothing: antialiased;
+      }
+      .dotcom {
+        color: green;
+      }
+      a {
+        background-color: transparent;
+      }
+      .toptext {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        letter-spacing: 4px;
+      }
+      .top-navbar {
+        position: relative;
+        background-color: #555555;
+        top: 0px;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+          0 2px 10px 0 rgba(0, 0, 0, 0.12);
+      }
+      .left-menus {
+        /* display: inline; */
+        float: left;
+      }
+      .top-navbar > .left-menus > ul > li,
+      .top-navbar > .right-menus > ul > li {
+        list-style-type: none;
+        display: inline-block;
+      }
+      .top-navbar li a {
+        text-decoration: none;
+        color: #f1f1f1;
+        display: block;
+        padding: 13px 13px;
+        letter-spacing: 1px;
+        width: auto;
+        font-size: 17px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .top-navbar > .left-menus > ul > li a:hover,
+      .top-navbar > .right-menus > ul > li a:hover {
+        background-color: black;
+        color: #f1f1f1;
+      }
+      .right-menus {
+        /* display: inline; */
+        float: right;
+      }
+      .clear {
+        clear: both;
+      }
+      .dropdown {
+        position: absolute;
+        background-color: #555555;
+        width: 100%;
+        left: 0px;
+        display: none;
+        max-height: 500px;
+        overflow-y: auto;
+
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+          0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+        /* padding: 24px 48px; */
+      }
+      .dropdown ul li {
+        list-style: none;
+        display: block;
+        padding: 2px 0 2px 6px;
+      }
+
+      .dropdown ul li h3 {
+        color: #f1f1f1;
+
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 2px;
+        padding: 1px;
+        font-weight: 400;
+
+        font-size: 24px;
+      }
+      .dropdown ul li a {
+        text-align: left;
+        font-size: 17px;
+        padding: 4px;
+      }
+      .dropdown ul li a:hover {
+        background: #ccc !important;
+      }
+      .dropdown > div {
+        vertical-align: top;
+       margin: 30px 53px;
+        width: 220px;     
+      }
+      .sub-menus:hover .dropdown {
+        display: block !important;
+      }
+      .sub-menus:hover a.more {
+        background-color: black;
+      }
+      .search-input{
+        
+        width: 350px ;
+        height:25px;
+      }
+      .search-submenu{
+        position: absolute;
+        right: 0px;
+        background-color: #555555;
+        padding: 5px;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+          0 2px 10px 0 rgba(0, 0, 0, 0.12);
+      }
+      .search:hover .search-submenu{
+        display: block !important;
+       
+
+      }
+      .search:hover a{
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body style="position:relative; min-height: 100%; top: 0px;">
+    <div class="top-container">
+      <a class="logo" href="//www.w3schools.com"
+        ><b>w3schools</b><span class="dotcom"><b>.com</b></span>
+      </a>
+      <div class="toptext">THE WORLD'S LARGEST WEB DEVELOPER SITE</div>
+    </div>
+    <div class="top-navbar">
+      <div class="left-menus">
+        <ul>
+          <li>
+            <a href="#"><i class="fa fa-home"></i></a>
+          </li>
+          <li>
+            <a href="#">HTML</a>
+          </li>
+          <li>
+            <a href="#">CSS</a>
+          </li>
+          <li>
+            <a href="#">JAVASCRIPT</a>
+          </li>
+          <li>
+            <a href="#">SQL</a>
+          </li>
+          <li>
+            <a href="php-page.html">PHP</a>
+          </li>
+          <li>
+            <a href="#">BOOTSTRAP</a>
+          </li>
+          <li>
+            <a href="#">HOW TO</a>
+          </li>
+          <li>
+            <a href="#">PYTHON</a>
+          </li>
+          <li class="sub-menus">
+            <a href="#" class="more">MORE <i class="fa fa-caret-down"></i> </a>
+
+            <div class="dropdown" style="position: absolute">
+              <div style="display:inline-block">
+                <ul>
+                  <li>
+                    <h3>HTML and CSS</h3>
+                  </li>
+                  <li>
+                    <a href="#">Learn HTML</a>
+                  </li>
+                  <li>
+                    <a href="#">Learn CSS</a>
+                  </li>
+                  <li>
+                    <a href="#">Learn W3.CSS</a>
+                  </li>
+                  <li>
+                    <a href="#">Learn Colors</a>
+                  </li>
+                  <li>
+                    <a href="#">Learn Icones</a>
+                  </li>
+                  <li>
+                    <a href="#">Learn Graphics</a>
+                  </li>
+                  <li>
+                    <a href="#">Learn SVG</a>
+                  </li>
+                  <li>
+                    <a href="#">Learn Canvas</a>
+                  </li>
+                  <li>
+                    <a href="#">Learn How TO</a>
+                  </li>
+                  <li>
+                    <a href="#">Learn Sass</a>
+                  </li>
+                </ul>
+              </div>
+              <div style="display:inline-block">
+                <ul>
+                  <li><h3>JavaScript</h3></li>
+                  <li>
+                    <a href="#">Learn JavaScript</a>
+                  </li>
+                  <li>
+                    <a href="#">Learn Jquery</a>
+                  </li>
+                  <li>
+                    <a href="#">Learn React</a>
+                  </li>
+                  <li>
+                    <a href="#">Learn AngularJS</a>
+                  </li>
+                  <li>
+                    <a href="#">Learn JSON</a>
+                  </li>
+                  <li>
+                    <a href="#">Learn AJAX</a>
+                  </li>
+                  <li>
+                    <a href="#">Learn W3.JS</a>
+                  </li>
+                  <li>
+                    <h3>Programming</h3>
+                  </li>
+                  <li>
+                    <a href="#">Learn Python</a>
+                  </li>
+                  <li>
+                    <a href="#">Learn Java</a>
+                  </li>
+                  <li>
+                    <a href="#">Learn C++</a>
+                  </li>
+                </ul>
+              </div>
+              <div style="display:inline-block">
+                  <ul>
+                    <li><h3>Server Side</h3></li>
+                    <li>
+                      <a href="#">Learn SQL</a>
+                    </li>
+                    <li>
+                      <a href="#">Learn PHP 5</a>
+                    </li>
+                    <li>
+                      <a href="#">Learn PHP 7</a>
+                    </li>
+                    <li>
+                      <a href="#">Learn ASP</a>
+                    </li>
+                    <li>
+                      <a href="#">Learn Node.js</a>
+                    </li>
+                    <li>
+                      <a href="#">Learn Raspberry Pi</a>
+                    </li>
+                    
+                    <li>
+                      <h3>Web Building</h3>
+                    </li>
+                    <li>
+                      <a href="#">Web Templates</a>
+                    </li>
+                    <li>
+                      <a href="#">Web Statistics</a>
+                    </li>
+                    <li>
+                      <a href="#">Web Certificates</a>
+                    </li>
+                    <li>
+                      <a href="#">Web Editior</a>
+                    </li>
+                    <li>
+                      <a href="#">Web Development</a>
+                    </li>
+                  </ul>
+                </div>
+                <div style="display: inline-block">
+                  <ul>
+                      <li>
+                          <h3>XML</h3>
+                        </li>
+                    <li>
+                      <a href="#">Learn XML</a>
+                    </li>
+                    <li>
+                      <a href="#">Learn XML AJAX</a>
+                    </li>
+                    <li>
+                      <a href="#">Learn XML DOM</a>
+                    </li>
+                    <li>
+                      <a href="#">Learn XML DTD</a>
+                    </li>
+                    <li>
+                      <a href="#">Learn XML Schema</a>
+                    </li>
+                    <li>
+                      <a href="#">Learn XML XSLT</a>
+                    </li>
+                    <li>
+                      <a href="#">Learn XML XPath</a>
+                    </li>
+                    <li>
+                        <a href="#">Learn XML XQuery</a>
+                      </li>
+                  </ul>
+                </div>
+
+            </div> 
+          </li>
+        </ul>
+      </div>
+      <div class="right-menus">
+        <ul>
+          <li>
+            <a href="#"
+              >REFERENCES
+              <i class="fa fa-caret-down"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="#"> EXERCISES
+              <i class="fa fa-caret-down"></i></a>
+          </li>
+          <li>
+            <a href="#"> <i class="fa fa-map"></i></a>
+          </li>
+
+          <li class="search">
+              <a href="#"> <i class="fa fa-search"></i></a>
+              <div class="search-submenu" style="display: none">
+                <ul style="list-style: none">
+                  <li>
+                    <div class="searching-div">
+                    <form action="#">
+                    <input class="search-input" type="text" placeholder="Search custom" >
+                    <button type="submit" style="background-color: blue; padding: 7px;border: none">
+                      <i class="fa fa-search" style="color: white"></i></button>
+                  </form>
+                </div>
+              </li>
+                </ul>
+                
+              </div>
+          </li>
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div>
+      <iframe src="https://www.w3schools.com">
+        <p>Your browser does not support iframes.</p>
+      </iframe>
+    </div>
+    
+
+    <script>
+      // $(document).ready(function() {
+      //   $(".left-menus a").mouseenter(function(e) {
+      //     $(e.target).css("background-color", "black");
+      //     $(e.target).css("color", "white");
+      //   });
+      //   $(".left-menus a").mouseleave(function(e) {
+      //     $(e.target).css("background-color", "#5f5f5f");
+      //     $(e.target).css("color", "white");
+      //   });
+      // });
+    </script>
+  </body>
+</html>

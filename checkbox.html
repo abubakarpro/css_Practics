@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Show checkboxes:</h1>
+
+    <form action="">
+      <input id="mycheckbox1" type="checkbox" name="vehicle" value="Bike" /> I
+      have a bike<br />
+      <input id="mycheckbox2" type="checkbox" name="vehicle" value="Car" /> I
+      have a car<br />
+      <input id="mycheckbox3" type="checkbox" name="vehicle" value="Boat" /> I
+      have a boat<br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+    <br />
+    <div id="result"></div>
+
+    <script>
+      $(document).ready(function() {
+        // $("#mycheckbox1").change(function() {
+        //   if ($(this).prop("checked")) {
+        //     console.log($(this).prop("checked"));
+        //   }
+        // });
+
+        $("form").submit(function(e) {
+          e.preventDefault();
+          $("#result").empty();
+          if ($("#mycheckbox1").prop("checked")) {
+            const prah = $("<p>").html(" checkbox of bike is checked");
+            $("#result").append(prah);
+          }
+          if ($("#mycheckbox2").prop("checked")) {
+            const prah = $("<p>").html(" checkbox of car is checked");
+            $("#result").append(prah);
+          }
+          if ($("#mycheckbox3").prop("checked")) {
+            const prah = $("<p>").html("checkbox of boat is checked");
+            $("#result").append(prah);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

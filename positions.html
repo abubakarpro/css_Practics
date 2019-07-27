@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      .main-box {
+        background-color: gray;
+        height: 250px;
+        width: 400px;
+        border-width: 2px;
+        border-style: solid;
+        border-color: red;
+        position: relative;
+        margin: 20px;
+      }
+      .inner-box1 {
+        width: 150px;
+        background-color: blue;
+        border-style: solid;
+        border-color: green;
+
+        position: fixed;
+        margin: 20px;
+        z-index: 1;
+      }
+      .inner-box2 {
+        width: 200px;
+        background-color: yellow;
+        border-style: solid;
+        border-color: orange;
+        color: black;
+
+        position: absolute;
+        margin: 20px;
+        right: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-box">
+      <div class="inner-box1">
+        i'm inner-box1 and my position is fixed with margin 20px from body
+      </div>
+
+      <div class="inner-box2">
+        i'm inner-box2 sdfsdfsdf sdfsdhgfshdgfjshdgfsdh hsdgfhsdgfhsgdfj
+      </div>
+    </div>
+    <p>dfhgdjhgfjhdgfh</p>
+    <div style="width:300px ; height:400px ; background-color: brown"></div>
+  </body>
+</html>
+
+<!-- 
+    *************////////Positions *****************
+    ********////////Static Position
+    1....By default sb elements static position main hoty h sb ka margin , padding
+etc apna apna ho ga. 
+2... jis order se elements a rhy h usi order main rhy gy mtlb agr h1 h2 se pehly
+likha gya h to hmesha h1 k bad hi aye ga
+
+/********//// Fixed Position 
+    1...Jis element ki position fixed kren gy wo page main ik diye hoi
+jaga (ap k padding margin k lehaz se) us jaga pe fixed ho jy ga or padding/magin
+height,width wgra ko wo body(means page k 0,0 point se consider kry ga)k
+lehaz se consider kry ga , 
+
+2.... scroll k bawajud yeh apni jaga pe fix rhy ga
+3....baki elements us ki jaga pe a skty h jo us k bad a rhy hun gy to wo apni
+jaga chor deta h or fixed ho jata h  
+
+/*************/// Relative Position 
+    1... Jis element ko position relative kren gy to wo apni actual jaga ni chorta jese fixed chor deti h
+          or jo left/right/top/bottom etc is ko den gy wo apni actual jaga yahan is ne draw hona tha udr se consider kry ga
+          2... Point of refrence apni actual jaga hi ho gi ..
+         
+        
+/***********// Absolute Position
+    1... Jis element ko position absolute kren gy jo is ko left/right/top/bottom etc apne us parent element se set kry ga jis
+ki khud position relative ho gi  agr koi b ni h to wo body k lehaz se le set kry ga
+    2... Or apni actual jaga chor deta h
+********************************************************END*********************************
+* Top/bottom/left/right/ yeh element ko move krne k liye use hoty h jb k 
+margin-left etc element k around space ko manage krty h   -->

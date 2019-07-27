@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <title>Local storage</title>
+
+    <style>
+      input,
+      button {
+        padding: 7px;
+        height: 40px;
+      }
+      fieldset {
+        margin-bottom: 20px;
+      }
+      .isOutput div {
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 style="color: blueviolet">Local Storage - JavaScript - decode</h2>
+    <fieldset>
+      <legend>Insert Data</legend>
+      <input type="text" class="inpKey" placeholder="Enter key..." />
+      <input type="text" class="inpValue" placeholder="Enter Value..." />
+      <button type="button" class="btnInsert">Data Insert</button>
+    </fieldset>
+    <br />
+
+    <fieldset>
+      <legend>Local Storage</legend>
+      <div class="IsOutput"></div>
+    </fieldset>
+
+    <script>
+      const inpKey = $(".inpKey");
+      const inpValue = $(".inpValue");
+      const btnInsert = $(".btnInsert");
+      const IsOutput = $(".IsOutput");
+
+      btnInsert.click(function() {
+        const key = inpKey.val();
+        const value = inpValue.val();
+        if (key && value) {
+          localStorage.setItem(key, value);
+          location.reload();
+        }
+      });
+      for (let i = 0; i < localStorage.length; i++) {
+        const newkey = localStorage.key(i);
+        const newvalue = localStorage.getItem(newkey);
+
+        const newdiv = $("<div>").html(newkey + ":" + newvalue);
+
+        IsOutput.append(newdiv);
+      }
+    </script>
+  </body>
+</html>

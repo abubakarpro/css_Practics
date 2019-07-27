@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <title>Document</title>
+    <style>
+      #content {
+        margin: 40px 620px;
+      }
+      header h1 {
+        text-align: center;
+        text-underline-position: below;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header><h1>Form</h1></header>
+    <div id="content">
+      <form action="" id="form">
+        <select name="mobiles" id="mobiles">
+          <option value="iphone_Mobiles">iphone_Mobiles</option>
+          <option value="oppo_Mobiles">oppo_Mobiles</option>
+          <option value="sumsung_Mobiles">sumsung_Mobiles</option>
+          <option value="nokia_Mobiles">nokia_Mobiles</option>
+        </select>
+        <br />
+        <br />
+        <select id="myselect"> </select>
+        <br />
+        <br />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+        const form = $("#form");
+        const mobiles_Company = $("#mobiles");
+
+        const myselect = $("#myselect");
+
+        // mobiles_Company.addEventListener("change", fun);
+        // function fun(event) {
+        //   if (mobiles_Company.val() == "oppo_Mobiles") {
+        //     console.log("asdasdasda");
+        //   }
+        // }
+
+        mobiles_Company.change(function() {
+          myselect.empty();
+          const mobiles_company_name = $(this).val();
+
+          $.ajax({
+            method: "GET",
+            url: "options.json",
+            type: "JSON"
+          }).done(function(data) {
+            data.forEach(function(element) {
+              if (mobiles_company_name == "iphone_Mobiles") {
+                $.each(element.iphone_Mobiles, function(val, text) {
+                  myselect.append(
+                    $("<option></option>")
+                      .val(val)
+                      .html(text)
+                  );
+                });
+              }
+              if (mobiles_company_name == "oppo_Mobiles") {
+                $.each(element.oppo_Mobiles, function(val, text) {
+                  myselect.append(
+                    $("<option></option>")
+                      .val(val)
+                      .html(text)
+                  );
+                });
+              }
+              if (mobiles_company_name == "sumsung_Mobiles") {
+                $.each(element.sumsung_Mobiles, function(val, text) {
+                  myselect.append(
+                    $("<option></option>")
+                      .val(val)
+                      .html(text)
+                  );
+                });
+              }
+              if (mobiles_company_name == "nokia_Mobiles") {
+                $.each(element.nokia_Mobiles, function(val, text) {
+                  myselect.append(
+                    $("<option></option>")
+                      .val(val)
+                      .html(text)
+                  );
+                });
+              }
+            });
+          });
+        });
+        mobiles_Company.trigger("change");
+
+        myselect.change(function(e) {
+          const mobile_name = $("#myselect option:selected").text();
+          $.ajax({
+            method: "GET",
+            url: "options.json",
+            type: "JSON"
+          }).done(function(data) {
+            data.forEach(function(element) {});
+          });
+        });
+        $("#myselect").trigger("change");
+      });
+    </script>
+  </body>
+</html>

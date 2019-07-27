@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1></h1>
+    <h2></h2>
+    <h3></h3>
+    <script>
+      //Array Type
+      var arr = [10, 40, 50, 60, 70];
+      localStorage.setItem("array", JSON.stringify(arr));
+      var newarr = JSON.parse(localStorage.getItem("array"));
+
+      for (let i = 0; i < arr.length; i++) {
+        const a = $("<h3>").html(newarr[i]);
+        $("body").append(a);
+      }
+
+      //JSON TYPe
+      var sitedata = {
+        name: "abubakar",
+        rollno: "12",
+        age: "23"
+      };
+      localStorage.setItem("mydata", JSON.stringify(sitedata));
+      localdata = JSON.parse(localStorage.getItem("mydata"));
+      $("h1").html(localdata.age);
+
+      //testing through variables
+      var s = "abubakar";
+      var y = 2;
+
+      var z = 2 + 5;
+      console.log(z);
+      localStorage.setItem("n", z);
+      localStorage.setItem("ss", s);
+      localStorage.setItem("n1", 2);
+      var getvar = localStorage.getItem("ss");
+      $("h2").html(getvar);
+    </script>
+  </body>
+</html>

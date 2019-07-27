@@ -1,0 +1,26 @@
+[
+  {
+    "iphone_Mobiles": ["iphone_4x", "iphone_6", "iphone_6x", "iphone_8x"],
+    "mobile_description": [
+      {
+        "mobile_name": "iphone_4x",
+        "mobile_price": "4500",
+        "mobile_color": "Red"
+      },
+      {
+        "mobile_name": "iphone_6x",
+        "mobile_price": "4500",
+        "mobile_color": "Red"
+      }
+    ]
+  },
+  {
+    "oppo_Mobiles": ["oppo_4x", "oppo_6", "oppo_6x", "oppo_8x"]
+  },
+  {
+    "sumsung_Mobiles": ["sumsung_4x", "sumsung_6", "sumsung_6x", "sumsung_8x"]
+  },
+  {
+    "nokia_Mobiles": ["nokia_4x", "nokia_6", "nokia_6x", "nokia_8x"]
+  }
+]

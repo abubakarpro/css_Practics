@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <form action="" id="form">
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+        const form = document.querySelector("#form");
+        const firstRadio = $(
+          '<input type="radio" name= "radio" value="first" />'
+        );
+        $("#form").append(firstRadio);
+        const secondRadio = document.createElement("input");
+
+        secondRadio.setAttribute("class", "sec");
+        secondRadio.setAttribute("type", "radio");
+        secondRadio.setAttribute("name", "radio");
+
+        secondRadio.setAttribute("value", "second");
+
+        form.appendChild(secondRadio);
+
+        $("#form").submit(function(e) {
+          e.preventDefault();
+          const value = $("input[type='radio']:checked").val();
+          const val = e.target.val;
+          console.log(value);
+        });
+      });
+    </script>
+  </body>
+</html>
